@@ -23,10 +23,9 @@ public class InputChecker : MonoBehaviour
     public void InstantiateImage(Image prefab)
     {
         Image image = Instantiate(prefab, transform);
-        image.transform.SetSiblingIndex(0);
 
         Images.Add(image);
-        if (Images.Count > 14)
+        if (Images.Count > 19)
         {
             Destroy(Images[0].gameObject);
             Images.RemoveAt(0);

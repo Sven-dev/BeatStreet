@@ -9,6 +9,8 @@ using UnityEngine.Events;
     // this is the class associated with the action map
     private Inputs controls = null;
 
+    [SerializeField] private UnityInputEvent OnInput;
+    [Space]
     [SerializeField] private UnityEvent OnDirectionRight;
     [SerializeField] private UnityEvent OnDirectionLeft;
     [SerializeField] private UnityEvent OnDirectionUp;
@@ -21,6 +23,8 @@ using UnityEngine.Events;
     [Space]
     [SerializeField] private UnityEvent OnPunch;
     [SerializeField] private UnityEvent OnKick;
+    [Space]
+    [SerializeField] private UnityEvent OnClear;
 
     private Direction CurrentDirection = Direction.None;
 
@@ -34,6 +38,7 @@ using UnityEngine.Events;
         // setup event handlers
         controls.Player.Punch.started += Punch;   // key down event
         controls.Player.Kick.started += Kick;   // key down event
+        controls.Player.Clear.started += Clear;
     }
 
     private void OnEnable()
@@ -126,40 +131,55 @@ using UnityEngine.Events;
         switch (direction)
         {
             case Direction.Right:
-                OnDirectionRight.Invoke();
+                OnDirectionRight?.Invoke();
+                OnInput?.Invoke(Input.Forward);
                 break;
             case Direction.UpRight:
-                OnDirectionUpRight.Invoke();
+                OnDirectionUpRight?.Invoke();
+                OnInput?.Invoke(Input.Upforward);
                 break;
             case Direction.Up:
-                OnDirectionUp.Invoke();
+                OnDirectionUp?.Invoke();
+                OnInput?.Invoke(Input.Up);
                 break;
             case Direction.UpLeft:
-                OnDirectionUpLeft.Invoke();
+                OnDirectionUpLeft?.Invoke();
+                OnInput?.Invoke(Input.Upback);
                 break;
             case Direction.DownRight:
-                OnDirectionDownRight.Invoke();
+                OnDirectionDownRight?.Invoke();
+                OnInput?.Invoke(Input.Downforward);
                 break;
             case Direction.Down:
-                OnDirectionDown.Invoke();
+                OnDirectionDown?.Invoke();
+                OnInput?.Invoke(Input.Down);
                 break;
             case Direction.DownLeft:
-                OnDirectionDownLeft.Invoke();
+                OnDirectionDownLeft?.Invoke();
+                OnInput?.Invoke(Input.Downback);
                 break;
             case Direction.Left:
-                OnDirectionLeft.Invoke();
+                OnDirectionLeft?.Invoke();
+                OnInput?.Invoke(Input.Back);
                 break;
         }
     }
 
     private void Punch(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        OnPunch.Invoke();
+        OnPunch?.Invoke();
+        OnInput?.Invoke(Input.Punch);
     }
 
     private void Kick(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        OnKick.Invoke();
+        OnKick?.Invoke();
+        OnInput?.Invoke(Input.Kick);
+    }
+
+    private void Clear(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        OnClear?.Invoke();
     }
 }
 
@@ -174,4 +194,18 @@ public enum Direction
     Down,
     DownLeft,
     Left
+}
+
+public enum Input
+{
+    Downback = 1,
+    Down = 2,
+    Downforward = 3,
+    Back = 4,
+    Forward = 6,
+    Upback = 7,
+    Up = 8,
+    Upforward = 9,
+    Punch = 10,
+    Kick = 11
 }
