@@ -818,7 +818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bpm: 174
-  Audio: {fileID: 1354288893}
+  BeatsPerMeasure: 4
 --- !u!4 &1354288892
 Transform:
   m_ObjectHideFlags: 0

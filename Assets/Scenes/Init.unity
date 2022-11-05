@@ -394,11 +394,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4989836045423086356, guid: 776fc9e671bb2504abca7ee04e2417bd, type: 3}
       propertyPath: Music.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4989836045423086356, guid: 776fc9e671bb2504abca7ee04e2417bd, type: 3}
       propertyPath: Sounds.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4989836045423086356, guid: 776fc9e671bb2504abca7ee04e2417bd, type: 3}
       propertyPath: Dialogue.Array.size
@@ -429,6 +429,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4989836045423086356, guid: 776fc9e671bb2504abca7ee04e2417bd, type: 3}
+      propertyPath: Sounds.Array.data[0].Name
+      value: MetronomeLow
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989836045423086356, guid: 776fc9e671bb2504abca7ee04e2417bd, type: 3}
+      propertyPath: Sounds.Array.data[1].Name
+      value: MetronomeHigh
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989836045423086356, guid: 776fc9e671bb2504abca7ee04e2417bd, type: 3}
       propertyPath: Music.Array.data[0].Volume
       value: 0.25
       objectReference: {fileID: 0}
@@ -437,11 +445,35 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4989836045423086356, guid: 776fc9e671bb2504abca7ee04e2417bd, type: 3}
+      propertyPath: Sounds.Array.data[0].Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989836045423086356, guid: 776fc9e671bb2504abca7ee04e2417bd, type: 3}
+      propertyPath: Sounds.Array.data[1].Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989836045423086356, guid: 776fc9e671bb2504abca7ee04e2417bd, type: 3}
+      propertyPath: Sounds.Array.data[0].Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989836045423086356, guid: 776fc9e671bb2504abca7ee04e2417bd, type: 3}
+      propertyPath: Sounds.Array.data[1].Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989836045423086356, guid: 776fc9e671bb2504abca7ee04e2417bd, type: 3}
       propertyPath: Music.Array.data[0].Clips.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4989836045423086356, guid: 776fc9e671bb2504abca7ee04e2417bd, type: 3}
       propertyPath: Music.Array.data[1].Clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989836045423086356, guid: 776fc9e671bb2504abca7ee04e2417bd, type: 3}
+      propertyPath: Sounds.Array.data[0].Clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989836045423086356, guid: 776fc9e671bb2504abca7ee04e2417bd, type: 3}
+      propertyPath: Sounds.Array.data[1].Clips.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4989836045423086356, guid: 776fc9e671bb2504abca7ee04e2417bd, type: 3}
@@ -456,6 +488,14 @@ PrefabInstance:
       propertyPath: Music.Array.data[1].Clips.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: a3b645ed85c43464484528e549597eea, type: 3}
+    - target: {fileID: 4989836045423086356, guid: 776fc9e671bb2504abca7ee04e2417bd, type: 3}
+      propertyPath: Sounds.Array.data[0].Clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: bb292ac2665e1a8458560e1fb23cc633, type: 3}
+    - target: {fileID: 4989836045423086356, guid: 776fc9e671bb2504abca7ee04e2417bd, type: 3}
+      propertyPath: Sounds.Array.data[1].Clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c9278ff6cc6a9764dac1a0dbafdbaeff, type: 3}
     - target: {fileID: 4989836045423086357, guid: 776fc9e671bb2504abca7ee04e2417bd, type: 3}
       propertyPath: m_RootOrder
       value: 2
