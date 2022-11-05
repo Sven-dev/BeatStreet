@@ -5,22 +5,26 @@ using UnityEngine;
 public class Metronome : MonoBehaviour
 {
     [SerializeField] private float Bpm;
+    [SerializeField] private AudioSource Audio;
+
+    private float BpmInSeconds;
+    private float NextTime;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(_MetronomeTimer());
+        BpmInSeconds = 60f / Bpm;
+        NextTime = (float)AudioSettings.dspTime + BpmInSeconds;
+        AudioManager.Instance.Play("DebugMusic");
     }
 
-    private IEnumerator _MetronomeTimer()
+    private void FixedUpdate()
     {
-        AudioManager.Instance.Play("DebugMusic");
-        while (true)
+        if (AudioSettings.dspTime >= NextTime)
         {
-            print("Tick");
+            Debug.Log("FixedUpdate Tick");
             AudioManager.Instance.Play("DebugMetronome");
-            yield return new WaitForSeconds(60f / Bpm);
-            print(60f / Bpm);
+            NextTime += BpmInSeconds;
         }
     }
 }
